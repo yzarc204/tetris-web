@@ -1,0 +1,6 @@
+class Pixel 
+{
+    constructor() {
+        
+    }
+};

@@ -1,0 +1,1 @@
+const PIXEL_SIZE = 20;

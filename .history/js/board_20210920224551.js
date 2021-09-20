@@ -1,0 +1,57 @@
+class Board
+{
+    constructor(tetris) {
+        this.tetris = tetris;
+        this.map = [];
+        this.row = ROW;
+        this.col = COL;
+        this.init();
+    }
+
+    init() {
+        for (let row = 0; row < this.row; row++) {
+            let rowData = [];
+            for (let col = 0; col < this.col; col++) {
+                rowData.push(_);
+            }
+            this.map.push(rowData);
+        }
+    }
+
+    isEmptyCell(row, col) {
+        if (row > this.row-1 || col > this.col-1)
+           return false;
+        return this.map[row][col] == _;
+    }
+
+    removeRow(idx) {
+        for (let i = idx; i < 0; i--) {
+            let[i]
+        }
+    }
+
+    update() {
+        let fullRows = [];
+        this.map.map((col, idx) => {
+            let c = 0;
+            col.map(value => {
+                if (value == B)
+                    c++;
+            });
+            if (c == ROW)
+                fullRows.push(idx);
+        });
+        fullRows.map(row => this.removeRow(row));
+    }
+
+    draw() {
+        for (let row = 0; row < this.row; row++) {
+            for (let col = 0; col < this.col; col++) {
+                let color = PIXEL_BG_COLOR;
+                if (this.map[row][col] == B)
+                    color = PIXEL_COLOR;
+                new Pixel(this.tetris, row, col, color).draw();
+            }
+        }
+    }
+};
