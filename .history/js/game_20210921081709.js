@@ -15,8 +15,8 @@ class Tetris {
 
     createNewBrick() {
         let time = Date.now() % (BRICK_SHAPES.length * 2 + 1);
-        let random = Math.floor(Math.random() * BRICK_SHAPES.length)*2;
-        let shape = Math.round((time + random) / 4);
+        let random = Math.floor(Math.random() * BRICK_SHAPES.length * 2);
+        let shape = Math.round((time + random) / 3);
         this.brick = new Brick(this, -2, 3, shape);
         for (let i = 0; i < Math.floor(Math.random() * 9 + 1); i++) {
             this.brick.rotate();
@@ -60,6 +60,18 @@ class Tetris {
                     break;
             }
         });
+    }
+
+    loadingScreen() {
+        this.board = new Board();
+        for (let i = ROW-1; i > 0; i--) {
+            this.board.map[i] = FULL_ROW;
+            this.board.draw();
+        }
+        for (let i = ROW-1; i > 0; i--) {
+            this.board.map[i] = FULL_ROW;
+            this.board.draw();
+        }
     }
 
     startGame() {

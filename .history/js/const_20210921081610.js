@@ -4,7 +4,7 @@ const B = 'B';
 const _ = ' ';
 
 const EMPTY_ROW = [_, _, _, _, _, _, _, _, _, _];
-const FULL_ROW = [B, B, B, B, B, B, B, B, B, B];
+const FULL_ROW = [B, B, B, B, B, B, B, B, B, B]l
 
 const ROW = 20;
 const COL = 10;
